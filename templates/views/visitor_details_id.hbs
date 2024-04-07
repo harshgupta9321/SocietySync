@@ -1,0 +1,179 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+        .dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+        .house-nav{
+            position: sticky;
+            top: 0;
+            display: flex;
+            {{!-- border: 2px solid green;
+            ' --}}
+            padding: 20px;
+            
+        }
+        .house-nav ul{
+            list-style-type: none;
+            display: flex;
+            column-gap: 10vw;
+
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        a:hover{
+            color: #555;
+            text-shadow: 2px 2px 5px #ee8b8b;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .main {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 50vw;
+        }
+
+        .main h2 {
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="Number"]{
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+      
+    </style>
+</head>
+
+<body>
+    <div class="house-nav">
+    {{>navbar}}
+    </div>
+    <div class="main">
+        <h2>Visitor Details</h2>
+        <form action="#">
+             <label for="visit_house_id">visit_house_id :- {{visit_house_id}}</label>
+
+            <label for="visitor_name">visitor_name :-{{visitor_name}}</label>
+
+            <label for="relation"> relation :-{{relation}}</label>
+
+            <label for="phone">phone :-{{phone}}</label>
+
+            <label for="check_in_time">check_in_time :-{{check_in_time}}</label>
+
+
+            <label for="check_out_time">check_out_time :- {{check_out_time}}</label>
+
+            <label for="address">address :- {{address}}</label>
+
+            <label for="adhar">adhar :- {{adhar}}</label>
+          
+
+
+
+          
+        </form>
+    </div>
+</body>
+
+</html>

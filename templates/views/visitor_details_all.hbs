@@ -1,0 +1,42 @@
+<!-- visitor_details_id.hbs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Details</title>
+    <!-- Add your CSS styles here -->
+</head>
+<body>
+    <h1>Visitor Details</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Visit House ID</th>
+                <th>Visitor Name</th>
+                <th>Relation</th>
+                <th>Phone</th>
+                <th>Aadhar</th>
+                <th>Address</th>
+                <th>Check-in Time</th>
+                <th>Check-out Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each visitors}}
+                <tr>
+                    <td>{{this.visit_house_id}}</td>
+                    <td>{{this.visitor_name}}</td>
+                    <td>{{this.relation}}</td>
+                    <td>{{this.phone}}</td>
+                    <td>{{this.adhar}}</td>
+                    <td>{{this.address}}</td>
+                    <td>{{this.check_in_time}}</td>
+                    <td>{{this.check_out_time}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+</html>
