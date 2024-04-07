@@ -2,41 +2,215 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visitor Details</title>
-    <!-- Add your CSS styles here -->
+    <style>
+        .dropbtn {
+          
+            color: black;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color: #272927;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f4e3e3;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #dbe0db;
+        }
+
+        .house-nav {
+            position: absolute;
+            top: 0;
+            display: flex;
+            border: 2px solid green;
+            border-radius: 25px;
+            margin-top: 3%;
+            padding-bottom: 4.5%;
+            background-color: #f9efef;
+            height: 1vh;
+            width: 90vw;
+            box-shadow: 2px 2px 10px #555;
+
+        }
+
+        .house-nav ul {
+            list-style-type: none;
+            display: flex;
+            column-gap: 10vw;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        a:hover {
+            color: #555;
+            text-shadow: 2px 2px 5px #868484;
+        }
+        a li button{
+            background-color: #ebefeb;
+            color: black;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .page {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            display:grid;
+            place-items: center;
+            margin: 0;
+            padding: 0;
+            {{!-- display: flex;
+            justify-content: center;
+            flex-direction: column; --}}
+            align-items: center;
+            height: 100vh;
+        }
+
+        .main {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 50vw;
+        }
+
+        .main h2 {
+            color: #1a1b1a;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px #d7d1d1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="Number"] {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover{
+            background-color: #ddd;
+            color: #555;
+            border: 2px solid #a8e6f4
+        }
+
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Visitor Details</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Visit House ID</th>
-                <th>Visitor Name</th>
-                <th>Relation</th>
-                <th>Phone</th>
-                <th>Aadhar</th>
-                <th>Address</th>
-                <th>Check-in Time</th>
-                <th>Check-out Time</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each visitors}}
-                <tr>
-                    <td>{{this.visit_house_id}}</td>
-                    <td>{{this.visitor_name}}</td>
-                    <td>{{this.relation}}</td>
-                    <td>{{this.phone}}</td>
-                    <td>{{this.adhar}}</td>
-                    <td>{{this.address}}</td>
-                    <td>{{this.check_in_time}}</td>
-                    <td>{{this.check_out_time}}</td>
-                </tr>
-            {{/each}}
-        </tbody>
-    </table>
+    <div class="page">
+        <div class="house-nav">
+            {{>navbar}}
+        </div>
+        <div class="main">
+            <h1>Visitor Details</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Visit House ID</th>
+                        <th>Visitor Name</th>
+                        <th>Relation</th>
+                        <th>Phone</th>
+                        <th>Aadhar</th>
+                        <th>Address</th>
+                        <th>Check-in Time</th>
+                        <th>Check-out Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each visitors}}
+                    <tr>
+                        <td>{{this.visit_house_id}}</td>
+                        <td>{{this.visitor_name}}</td>
+                        <td>{{this.relation}}</td>
+                        <td>{{this.phone}}</td>
+                        <td>{{this.adhar}}</td>
+                        <td>{{this.address}}</td>
+                        <td>{{this.check_in_time}}</td>
+                        <td>{{this.check_out_time}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 </body>
+
 </html>

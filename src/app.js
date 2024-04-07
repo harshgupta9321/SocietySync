@@ -102,7 +102,7 @@ app.post("/visitor_details",async(req,res)=>{
 // Assuming you have already set up your express app and required dependencies
 
 // Define your route to handle POST requests for visitor details
-app.get("/visitor_all", async (req, res) => {
+app.get("/visitor_all",auth, async (req, res) => {
   try {
       // Extract the visit_house_id from the request body
       const { visit_house_id } = req.body;
